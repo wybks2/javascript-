@@ -1,0 +1,26 @@
+防抖与节流
+
+创建一个a元素，a.click 触发，触发下载链接后删除
+
+前端埋点
+
+http请求
+浏览器请求阻塞机制
+chrome 4+浏览器 6个http1.1最大连接数
+opera 10.5 8个
+
+多于最大连接数的请求，必须排队。所以减少http请求数，也是性能优化的一个点，后端设置请求时长。
+
+浏览器 
+http
+promise的js实现
+apply call bind 的js 实现
+fetch 
+手写ajax请求
+postmessage
+
+PM2 管理nodeJs进程
+
+禁止蜘蛛获取页面内容
+
+

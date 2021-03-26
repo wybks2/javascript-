@@ -6,7 +6,7 @@
 // 
 
 Object.defineProperties(Object, 'is', function(){
-
+  
 })
 
 const assignObj = function(){
