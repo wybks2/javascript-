@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .father {
+    width: 300px;
+    height: 500px;
+    background: grey;
+  }
+  .son {
+    width: 200px;
+    height: 200px;
+    background: wheat;
+  }
+  .flexF {
+    width: 200px;
+    height: 400px;
+    overflow: auto;
+    display: flex;
+  }
+  .flexS {
+    width: 200px;
+    /* height: 800px; */
+    background: #555;
+  }
+  .sonF {
+    width: 100%;
+    height: 400px;
+  }
+</style>
+<body>
+  <div class="father" onclick="father()">
+    父元素
+    <div class="son" onclick="son()">
+      子元素
+      <a id="name" href="1233">1233</a>
+      <a id="name" href="1233">1234</a>
+    </div>
+  </div>
+  <div class="flexF">
+    <div class="flexS">
+      <div class="sonF"></div>
+      <div class="sonF"></div>
+      <div class="sonF"></div>
+      <div class="sonF"></div>
+      <div class="sonF"></div>
+    </div>
+  </div>
+</body>
+<script>
+  function father(){
+    console.log('我是父元素 ')
+  }
+  function son() {
+    const id = document.getElementById('name')
+    console.log('我是子元素', id.href, id.getAttribute('href'))
+  }
+  function stopDefault(e) {
+    // 提供事件对象，非ie浏览器
+    console.log(e)
+    alert(2);
+    if(e && e.preventDefault){
+      e.preventDefault();
+      alert(3);
+    } else {
+      // ie中阻止函数器默认动作
+      window.event.returnValue = false;
+      return false;
+    }
+  }
+  console.log(document.getElementsByTagName('a'))
+  document.getElementsByTagName('a')[1].addEventListener('click', (e) => {
+    stopDefault(e);
+  }) 
+</script>
+</html>
+

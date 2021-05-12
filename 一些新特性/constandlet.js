@@ -23,3 +23,11 @@ console.log(tep)
 
 // 预编译的知识
 
+
+// 顶层对象 浏览器顶层对象是window node顶层对象是global
+// window与web worker可以用self 指向顶层对象
+// 没有一种确切的方法获取所有顶层对象
+// 1. new Function( return this );  严格模式下，返回undefined
+// 2. 全局环境下，浏览器this返回window。es6模块和node模块返回当前模块
+// 3. 非对象中的函数中this，指向全局对象。
+

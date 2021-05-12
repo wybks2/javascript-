@@ -5,9 +5,9 @@
 // 5. object.assign(target, source, source) 将source可枚举属性复制到target上面，不会复制原型链上的。 
 // 
 
-Object.defineProperties(Object, 'is', function(){
+// Object.defineProperties(Object, 'is', function(){
   
-})
+// })
 
 const assignObj = function(){
   return Object.assign(...arguments);
@@ -20,6 +20,14 @@ console.log(assignObj({},'abc'))
 // 布尔值 数字类型 没有可枚举属性 会直接被跳过   undefined null不能转成对象，因为没有原始包装类，也会被跳过
 console.log(assignObj('abc'))
 console.log(assignObj(true,'abc'))
-console.log(assignObj('123',{a:1}))
+// console.log(assignObj('123',{a:1}))
 
 // console.log(assignObj('123','123')) 两个字符串为什么不行呢
+const obj = {a:123, b:321}
+const c = {b:123}
+const c_2 = assignObj(c, obj)
+c.n = '1233'
+console.log(c_2,c);
+console.log(obj, c)
+c.n = '1233'
+

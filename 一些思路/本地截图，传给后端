@@ -1,0 +1,13 @@
+1. 如何将canvas画好的图传给后端，把canvas转换成base64编码，传给后端
+
+思路
+canvas2html生成截图
+转换base64编码
+
+思路2 
+自己canvas写一个
+
+
+错误1 
+canvas 打印的图片是空白
+1. 是dom空白，换body依旧空白  
